@@ -97,7 +97,7 @@ geo_reader = maxminddb.open_database(GEOIP_DATABASE)
 for line in open(FILENAME_LOG_FAIL2BAN).readlines():
     line = [
         item
-        for item in line.split(' ')
+        for item in line[:-1].split(' ')
         if item
     ]
     item = {
