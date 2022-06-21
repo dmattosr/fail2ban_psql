@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: fail2ban_psql
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: fail2ban_psql
+
+    networks:
+      postgres-network:
+    volumes:
+      - /var/log/fail2ban.log:/fail2ban.log:ro
+
+networks:
+   postgres-network:
+    external: true
