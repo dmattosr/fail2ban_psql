@@ -100,6 +100,8 @@ for line in open(FILENAME_LOG_FAIL2BAN).readlines():
         for item in line[:-1].split(' ')
         if item
     ]
+    if len(line) < 8:
+         continue
     item = {
         'time': '{} {}'.format(*line[0:2])[:-4],
         'type': line[2],
