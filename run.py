@@ -119,8 +119,8 @@ for line in open(FILENAME_LOG_FAIL2BAN).readlines():
         'country': val.get('country', {}).get('names', {}).get('en', ''),
         'country_code': val.get('country', {}).get('iso_code', ''),
         'city': val.get('city', {}).get('names', {}).get('en', ''),
-        'latitude': val.get('location', {}).get('latitude', 'null'),
-        'longitude': val.get('location', {}).get('longitude', 'null'),
+        'latitude': val.get('location', {}).get('latitude', None),
+        'longitude': val.get('location', {}).get('longitude', None),
     })
 
     vals = (
